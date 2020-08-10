@@ -39,10 +39,3 @@ print(type(name))#'''
 age = 18
 name = "Vasya"
 print("My name is", name, ".I'm", age, "years old.")
-#EBANUTSA
-#EBANUTSA
-#EBANUTSA
-#EBANUTSA
-#EBANUTSA
-
-
