@@ -20,5 +20,5 @@ print(a == a**a)
 print(a == a*2)
 print(a > 999999)
 
-
+'1'
 
