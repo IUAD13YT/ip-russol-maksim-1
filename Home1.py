@@ -92,3 +92,4 @@ else:
     x1 = -b + math.sqrt(d)
     x2 = -b - math.sqrt(d)
     print("Корни уравнения: Х1= ", x1, "; Х2= ", x2)
+    '''1'''
