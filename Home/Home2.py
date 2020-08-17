@@ -1,4 +1,4 @@
-'''__author__ = 'Руссол Максим Алнксандрович'
+__author__ = 'Руссол Максим Алнксандрович'
 
 # Задача-1: Запросите у пользователя его возраст.
 # Если ему есть 18 лет, выведите: "Доступ разрешен",
@@ -25,14 +25,16 @@ else:
 # Я не понимаю, что вы от меня хотите...
 
 answer = str(input('(Задача №2)\nВыберите вариант: четные или нечетные?\n'))
-if answer == 'четные':
-    chetn = list(range(0,22,2))
-    print(chetn)
-elif answer == 'нечетные':
-    nechet = list(range (1,20,2))
-    print(nechet)
-else:
-    while answer != 'четные' or answer != 'нечетные':
+while answer != 'четные' or answer != 'нечетные':
+    if answer == 'четные':
+        chetn = list(range(0,22,2))
+        print(chetn)
+        break
+    elif answer == 'нечетные':
+        nechet = list(range (1,20,2))
+        print(nechet)
+        break
+    else:
         print('Я не понимаю, что вы от меня хотите...')
         answer = str(input('Выберите вариант: четные или нечетные?\n'))
 
@@ -46,7 +48,6 @@ else:
 # * при желании и понимании решите задачу с применением цикла for.'''
 
 import random
-# d = int(input('(Задача №3)\nСколько генераций желаете задать (указать числом):\n'))
 d = int(input('(Задача №3)\nСколько генераций желаете задать (указать числом):\n'))
 for a in range (1, d):
        random.seed(a)
@@ -55,12 +56,12 @@ for a in range (1, d):
        print('Случайное число x = ', x, 'максимальное значение цифры в данном числе = ', m)
 
 # Либо так:
-
+print('\n(Задача №3)')
 import random
-b = 0
-while b < 10:
-    b += 1
-    random.seed(b)
-    y = str(random.randint(0, 99999))
-    M = max(l for l in y)
-    print('Cлучайное число y = ', y, 'максимальное значение цифры в данном числе = ', M)
+a = 0
+while a < 10:
+    a += 1
+    random.seed(a)
+    x = str(random.randint(0, 99999))
+    m = max(i for i in x)
+    print('Cлучайное число x = ', x, 'максимальное значение цифры в данном числе = ', m)
