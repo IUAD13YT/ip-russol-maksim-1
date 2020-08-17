@@ -7,8 +7,9 @@
 >= Больше или равно
 <= Меньше или равно'''
 
-# x = 5 > 10
-# print (x, type (x))
+x = 5 > 10
+print (x, type(x))
+
 #True <class 'bool'>
 
 '''# Ctrl+? - quick comment
