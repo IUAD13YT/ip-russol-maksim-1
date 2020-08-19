@@ -106,7 +106,7 @@ print('d=',d)
 f={} #А так получится словарь
 print('type({})-->', type(f)) #<class 'dict'>
 # операции с множествами
-ghghng
+
 
 
 # # string = 'Hello'
