@@ -63,7 +63,24 @@ date = '-2.10.3001'
 # Выход: 5 3
 
 
-
+N = 10003423
+floor = 1
+room = 1
+answer_floor = 0
+answer_room = None
+while N > 0:
+    for current_floor in range(floor):
+        answer_floor += 1
+    for current_room in range(room):
+        N -= 1
+    if N == 0:
+        answer_room = current_room + 1
+    break
+    if N == 0:
+        break
+floor += 1
+room += 1
+print(answer_floor, answer_room)
 
 
 
