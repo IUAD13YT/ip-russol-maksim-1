@@ -10,23 +10,9 @@ print('Задача №1')
 def convert(k):
     """конвертер"""
     m = float(1.609 * k)
-    return m
-
-
-for i in range(3):
-    r = convert(float(input('Длина в km = ')))
-    print('Длина в miles = ', r)
-
-
-def average(*args):
-    summ = 0
-    for arg in args:
-        summ += arg
-    return summ / len(args)
-
-
-print(average(1, 2, 3))
-
+    for i in range(3):
+        k = (float(input('Длина в km = ')))
+        print('Длина в miles = ', m)
 
 # Задание-2:
 # Напишите функцию, округляющую полученное произвольное десятичное число
