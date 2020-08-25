@@ -1,4 +1,5 @@
 import math
+
 '''n = 60
 list1 = range(1,100)
 l2 = map(lambda x, y: x * y, list1, list1)
@@ -13,22 +14,23 @@ for q in range(len(l2)-1):
 print (k)
 print (sum(l2[:q]))'''
 import math
-n = 168
-l1 = range(1,100)
+
+n = int(input('ВХОД'
+              '\nНОМЕР КОМНАТЫ\n'))
+l1 = range(1, 100)
 l2 = map(lambda x, y: x * y, l1, l1)
-l2 = list (l2)
+l2 = list(l2)
 k = ()
 q = 0
 while sum(l2[:q]) <= n:
     sum(l2[:q])
     q += 1
-k = n - sum(l2[:q-1])
-b = len(l2[:q])
-print (b,k)
-print (k%b)
-floor = ((sum (l1[0:b-2])) + (k%b))
-print (f'floor = {floor}')
-
+k = n - sum(l2[:q - 1])
+b = len(l2[:q])  # n-ый блок из n этажей
+number = k % b
+floor = (sum(l1[0:q - 1]) + int(round((k / b), 0)))
+print(f'ВЫХОД'
+      f'\nЭТАЖ {floor} ПОРЯДКОВЫЙ НОМЕР НА ЭТАЖЕ {number}')
 
 #     print(max(sum(l2[0:i])))
 # for i,y in enumerate(l2): #- Возвращает пары,(элемент, его индекс) только для последовательностей
