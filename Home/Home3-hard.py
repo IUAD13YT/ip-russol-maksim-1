@@ -100,7 +100,7 @@ for q in range(len(l2)-1):
 print (k)
 print (sum(l2[:q]))'''
 import math
-n = 60
+n =
 list1 = range(1,100)
 l2 = map(lambda x, y: x * y, list1, list1)
 l2 = list (l2)
@@ -112,6 +112,7 @@ while sum(l2[:q]) <= n:
 k = n - sum(l2[:q-1])
 b = len(l2[:q])
 print (b,k)
+
 
 N = 10003423
 floor = 1
