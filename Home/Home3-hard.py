@@ -82,51 +82,19 @@ else:
 # Вход: 11
 # Выход: 5 3
 
-
-import math
-'''n = 60
-list1 = range(1,100)
-l2 = map(lambda x, y: x * y, list1, list1)
-l2 = list (l2)
-k = ()
-for q in range(len(l2)-1):
-    q=0
-    sum(l2[:q]) < n < sum(l2[:q+1])
-    q +=q
-    k = n - sum(l2[:q])
-
-print (k)
-print (sum(l2[:q]))'''
-import math
-n =
-list1 = range(1,100)
-l2 = map(lambda x, y: x * y, list1, list1)
-l2 = list (l2)
+n = int(input('ВХОД'
+              '\nНОМЕР КОМНАТЫ\n'))
+l1 = range(1, 100)
+l2 = map(lambda x, y: x * y, l1, l1)
+l2 = list(l2)
 k = ()
 q = 0
 while sum(l2[:q]) <= n:
     sum(l2[:q])
     q += 1
-k = n - sum(l2[:q-1])
-b = len(l2[:q])
-print (b,k)
-
-
-N = 10003423
-floor = 1
-room = 1
-answer_floor = 0
-answer_room = None
-while N > 0:
-     for current_floor in range(floor):
-         answer_floor += 1
-     for current_room in range(room):
-         N -= 1
-     if N == 0:
-         answer_room = current_room + 1
-     break
-     if N == 0:
-         break
-floor += 1
-room += 1
-print(answer_floor, answer_room)
+k = n - sum(l2[:q - 1])
+b = len(l2[:q])  # n-ый блок из n этажей
+number = k % b
+floor = (sum(l1[0:q - 1]) + int(round((k / b), 0)))
+print(f'ВЫХОД'
+      f'\nЭТАЖ {floor} ПОРЯДКОВЫЙ НОМЕР НА ЭТАЖЕ {number}')
