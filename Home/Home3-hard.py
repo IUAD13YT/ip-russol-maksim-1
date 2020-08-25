@@ -7,9 +7,9 @@
 
 equation = 'y = -12x + 11111140.2121'
 x = 2.5
-e = equation.split(' ') # print (k) => ['y', '=', '-12x', '+', '11111140.2121']
+e = equation.split(' ')  # print (k) => ['y', '=', '-12x', '+', '11111140.2121']
 k = str(e[2])
-e[2] = k[:-1] #print (k, a) => ['y', '=', '-12', '+', '11111140.2121'] -12x
+e[2] = k[:-1]  # print (k, a) => ['y', '=', '-12', '+', '11111140.2121'] -12x
 y = float(e[2]) * x + float(e[-1])
 print(y)
 
@@ -24,13 +24,33 @@ print(y)
 #  (т.е. 2 символа для дня, 2 - для месяца, 4 - для года)
 
 # Пример корректной даты
-date = '01.11.1985'
-
+# date = '01.11.1985'
 # Примеры некорректных дат
-date = '01.22.1001'
-date = '1.12.1001'
-date = '-2.10.3001'
+# date = '01.22.1001'
+# date = '1.12.1001'
+# date = '-2.10.3001'
 
+input_date = input('введите дату в формате дд.мм.гггг:')
+date = input_date.split('.')
+day = int(date[0])
+month = int(date[1])
+year = int(date[2])
+day_31_month = [1,3,5,7,8,10,12]
+leap_year = range(1920,3000,4)
+if len(date[0]) != 2 or len(date[1]) != 2 or len(date[2]) != 4:
+    print('Не корректен формат даты. Следуйте формату дд.мм.гггг')
+elif day > 31 or day < 1:
+    print('Проверьте корректность ввода значения дня')
+elif month == 2 and day > 28:
+    print('Проверьте корректность ввода значения дня. Февраль короче')
+elif month > 12 or month < 1:
+    print('Введён не корректный месяц')
+elif year > 3000 or year < 1920:
+    print('Введён не корректный год')
+elif month not in day_31_month and day > 30:
+    print('Проверьте корректность ввода значения дня')
+else:
+    print('Дата введена корректно: ', input_date)
 
 # Задание-3: "Перевёрнутая башня" (Задача олимпиадного уровня)
 #
@@ -57,11 +77,41 @@ date = '-2.10.3001'
 #
 # Пример:
 # Вход: 13
+
+
 # Выход: 6 2
 #
 # Вход: 11
 # Выход: 5 3
 
+
+import math
+'''n = 60
+list1 = range(1,100)
+l2 = map(lambda x, y: x * y, list1, list1)
+l2 = list (l2)
+k = ()
+for q in range(len(l2)-1):
+    q=0
+    sum(l2[:q]) < n < sum(l2[:q+1])
+    q +=q
+    k = n - sum(l2[:q])
+
+print (k)
+print (sum(l2[:q]))'''
+import math
+n = 60
+list1 = range(1,100)
+l2 = map(lambda x, y: x * y, list1, list1)
+l2 = list (l2)
+k = ()
+q = 0
+while sum(l2[:q]) <= n:
+    sum(l2[:q])
+    q += 1
+k = n - sum(l2[:q-1])
+b = len(l2[:q])
+print (b,k)
 
 N = 10003423
 floor = 1
@@ -69,44 +119,15 @@ room = 1
 answer_floor = 0
 answer_room = None
 while N > 0:
-    for current_floor in range(floor):
-        answer_floor += 1
-    for current_room in range(room):
-        N -= 1
-    if N == 0:
-        answer_room = current_room + 1
-    break
-    if N == 0:
-        break
+     for current_floor in range(floor):
+         answer_floor += 1
+     for current_room in range(room):
+         N -= 1
+     if N == 0:
+         answer_room = current_room + 1
+     break
+     if N == 0:
+         break
 floor += 1
 room += 1
 print(answer_floor, answer_room)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
