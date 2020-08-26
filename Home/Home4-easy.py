@@ -10,8 +10,6 @@ def convert(k):
     """конвертер"""
     m = float(1.609 * k)
     print('Длина в miles = ', m)
-
-
 convert(3)
 
 # Задание-2:
