@@ -1,0 +1,10 @@
+def convert(k):
+    """конвертер"""
+    m = float(1.609 * k)
+    print('Длина в miles = ', m)
+convert(3)
+
+def do_something():
+    return "I'm func do_something in module lib1"
+   def more_then_one(num):
+    return num > 1
