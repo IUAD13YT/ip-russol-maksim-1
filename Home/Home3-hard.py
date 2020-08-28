@@ -94,7 +94,8 @@ while sum(l2[:q]) <= n:
     q += 1
 k = n - sum(l2[:q - 1])
 b = len(l2[:q])  # n-ый блок из n этажей
-number = k % b
-floor = (sum(l1[0:q - 1]) + int(round((k / b), 0)))
+param = divmod(k, b) #функция divmod(k, b) выдает (х = k/b; y = k%b)
+number = param[1]
+floor = (sum(l1[0:q - 1]) + int(round(param[0])))
 print(f'ВЫХОД'
       f'\nЭТАЖ {floor} ПОРЯДКОВЫЙ НОМЕР НА ЭТАЖЕ {number}')
