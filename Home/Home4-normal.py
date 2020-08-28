@@ -54,11 +54,13 @@ print(res)
 # истину (true) или ее аналог (не ноль, не пустую строку, не None).
 l1 = [-1.25, -2, 4, 5, 6]
 l2 = [2, 3, 4]
-poz = list(lambda x: x > 0)
-poz(l1)
-
-poz(int(list(l1)))
-print(l1)
+che = [i for i in l1 if i % 2 == 0]
+poz = [i for i in l1 if i > 0]
+neg = [i for i in l1 if i < 0]
+int = [i for i in l1 if i == int]
+flo = [i for i in l1 if i == float]
+str = [i for i in l1 if i == str]
+print(che, poz, neg)
 
 # Задача-4:
 # Даны четыре точки А1(х1, у1), А2(x2 ,у2), А3(x3 , у3), А4(х4, у4).
