@@ -69,14 +69,20 @@ class Student(Person):
     def set_new_class_room(self, class_room):
         self._class_room = class_room
 
+    # @property - позволяет обращаться к методу как  к атрибуту
+    # .class_room() --> .class_room
+    @property
     def get_class_room(self):
         return self._class_room
 
 
 class Teacher(Person):
-    def __init__(self, name, surname, age, school, class_list):
-        Person.__init__(self, name, surname, age, school)
+    room = 'default'
+
+    def __init__(self, name='Gordey', surname='Manukian', age='31', school='43', class_list='4b,3c,5d'):
+        Person.__init__(self, name=name, surname=surname, age=age, school=school)
         self._class_list = class_list
+        # self.room = '12456'
 
     def set_new_class_list(self, class_list):
         self._class_list = class_list
@@ -85,14 +91,18 @@ class Teacher(Person):
         return self._class_list
 
 
-student_1 = Student("Maks", "Russol", "22", "school", "2d")
-teacher_1 = Teacher("Svetlana", "Gotsiuk", "39", "school", "2d, 2c, 2a")
+# student_1 = Student("Maks", "Russol", "22", "school", "2d")
+teacher_1 = Teacher("Svetlana", "Gotsiuk", "39", "school", ' ')
+teacher_2 = Teacher()
+print(teacher_2.full_name())
 # print(student_1.full_name())
-# print(student_1.get_class_room())
+# print(student_1.get_class_room)
 # student_1.set_new_class_room('2a')
+
 # print(student_1.get_class_room())
 
 print(teacher_1.full_name())
 print(teacher_1.get_class_list())
-teacher_1.set_new_class_list('2a')
-print(teacher_1.get_class_list())
+# teacher_1.set_new_class_list('2a')
+# print(teacher_1.get_class_list())
+print(teacher_1.room)
