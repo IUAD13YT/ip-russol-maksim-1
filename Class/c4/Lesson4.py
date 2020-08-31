@@ -131,6 +131,6 @@ print(list(filter(len, ['','not null','bla','','10']))) #отбрасывает 
 #         print (line)
 #         break
 
-my_file = open('russol.txt', 'w')
+my_file = open('../c6/russol.txt', 'w')
 my_file.write('Python nice')
 my_file.close()
