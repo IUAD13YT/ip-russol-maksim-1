@@ -35,8 +35,8 @@ date = input_date.split('.')
 day = int(date[0])
 month = int(date[1])
 year = int(date[2])
-day_31_month = [1,3,5,7,8,10,12]
-leap_year = range(1920,3000,4)
+day_31_month = [1, 3, 5, 7, 8, 10, 12]
+leap_year = range(1920, 3000, 4)
 if len(date[0]) != 2 or len(date[1]) != 2 or len(date[2]) != 4:
     print('Не корректен формат даты. Следуйте формату дд.мм.гггг')
 elif day > 31 or day < 1:
@@ -94,7 +94,7 @@ while sum(l2[:q]) <= n:
     q += 1
 k = n - sum(l2[:q - 1])
 b = len(l2[:q])  # n-ый блок из n этажей
-param = divmod(k, b) #функция divmod(k, b) выдает (х = k/b; y = k%b)
+param = divmod(k, b)  # функция divmod(k, b) выдает (х = k/b; y = k%b)
 number = param[1]
 floor = (sum(l1[0:q - 1]) + int(round(param[0])))
 print(f'ВЫХОД'

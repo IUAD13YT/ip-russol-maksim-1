@@ -46,22 +46,28 @@ print(origin_list)
 res = sort_to_max(origin_list)
 print(res)
 
+
 # Задача-3:
 # Напишите собственную реализацию стандартной функции filter.
 # Разумеется, внутри нельзя использовать саму функцию filter.
 # Функция filter() возвращает итератор, состоящий из тех элементов последовательности,
 # для которых переданная в качестве первого аргумента функция вернула
 # истину (true) или ее аналог (не ноль, не пустую строку, не None).
-l1 = [-1.25, -2, 4, 5, 6]
-l2 = [2, 3, 4]
-che = [i for i in l1 if i % 2 == 0]
-poz = [i for i in l1 if i > 0]
-neg = [i for i in l1 if i < 0]
-int = [i for i in l1 if i == int]
-flo = [i for i in l1 if i == float]
-str = [i for i in l1 if i == str]
-print(che, poz, neg)
+
+def filter_func(function, iterable):
+    return (item for item in iterable if function(item))
+
+
+print(list(filter_func(lambda x: True if x % 2 == 0 else False,
+                       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])))
+
 
 # Задача-4:
 # Даны четыре точки А1(х1, у1), А2(x2 ,у2), А3(x3 , у3), А4(х4, у4).
 # Определить, будут ли они вершинами параллелограмма.
+
+def is_parallelogram(a1, a2, a3, a4):
+    if abs(a3[0] - a2[0]) == abs(a4[0] - a1[0]) and \
+            abs(a2[1] - a1[1]) == abs(a3[1] - a4[1]):
+        return True
+    return False
