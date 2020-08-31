@@ -17,6 +17,12 @@
 # они получают удвоенную ЗП, пропорциональную норме.
 # Кол-во часов, которые были отработаны, указаны в файле "data/hours_of"
 
+import os
+path = os.path.join('C:\Users\user\Desktop\DL\hw04>\workers')
+f = open(path, 'r', encoding= 'UTF-8')
+print(f.readlines())
+f.close()
+
 
 # Задание-3:
 # Дан файл ("data/fruits") со списком фруктов.
