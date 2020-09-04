@@ -18,12 +18,13 @@
 # Кол-во часов, которые были отработаны, указаны в файле "data/hours_of"
 
 import os
-path = os.path.join('C:\Users\user\Desktop\DL\hw04>\workers')
-f = open(path, 'r', encoding= 'UTF-8')
+
+path = os.path.join('workers')
+f = open(path, 'r', encoding='UTF-8')
 print(f.readlines())
 f.close()
-
-
+info = zip(f).split()
+print(info)
 # Задание-3:
 # Дан файл ("data/fruits") со списком фруктов.
 # Записать в новые файлы все фрукты, начинающиеся с определенной буквы.
