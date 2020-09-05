@@ -62,7 +62,6 @@ print('Символы нижнего регистра без модуля (re):\
 print('------------------------------------------------------')
 '''
 
-
 # Задание-2:
 # Вывести символы в верхнем регистре, слева от которых находятся
 # два символа в нижнем регистре, а справа - два символа в верхнем регистре.
@@ -133,3 +132,45 @@ print('------------------------------------------------------') '''
 # 2500-значное произвольное число.
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
+
+import random
+# x = input('введите имя файла:\n')
+file_h5_1n = open('x', 'w')
+digits = [random.randint(0, 9) for i in range(2500)]
+# spisok = ''.join(list(map(lambda x: str(x), digits)))
+# print(spisok)
+for i in digits:
+    print(i, end='', file=file_h5_1n)
+file_h5_1n.close()
+from re import findall
+file_h5_1n = open('x', 'r')
+digits2500list = file_h5_1n.read()
+print(digits2500list)
+def long_combo(x,y):
+    from re import findall as poisk
+    z = poisk(x, y)
+    return z
+pattern_1 = ('([0]{3,9}|[1]{3,9}|[2]{3,9}|[3]{3,9}|[4]{3,9}|[5]{3,9}|[6]{3,9}|[7]{3,9}|[8]{3,9}|[9]{3,9})')
+res_1 = long_combo(pattern_1, digits2500list)
+print(res_1)
+file_h5_1n.close()
+
+
+import re
+
+def longestSubstring(digits2500list):
+
+    digit = max(re.findall('([0]{3,9}|[1]{3,9}|[2]{3,9}|[3]{3,9}|[4]{3,9}|[5]{3,9}|[6]{3,9}|[7]{3,9}|[8]{3,9}|[9]{3,9})', digits2500list), key=len)
+
+    return print(digit)
+
+# with open(path, 'r', encoding='UTF-8') as file:
+#     stroka_1 = list(file.read())
+# print(stroka_1)
+
+# print(digits)
+# print(*digits, end = '', file = file_h5_1n)
+# file_h5_1n.close()
+
+# spisok = ''.join(list(map(lambda x: str(x), digits)))
+# print(spisok)
