@@ -133,44 +133,40 @@ print('------------------------------------------------------') '''
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
 
-import random
-# x = input('введите имя файла:\n')
-file_h5_1n = open('x', 'w')
-digits = [random.randint(0, 9) for i in range(2500)]
-# spisok = ''.join(list(map(lambda x: str(x), digits)))
-# print(spisok)
+from random import randint
+
+x = input('введите имя файла, например h5_1n:\n') + '.txt'
+f5 = open(x, 'w+')
+digits = [randint(0, 9) for i in range(2500)]
+
 for i in digits:
-    print(i, end='', file=file_h5_1n)
-file_h5_1n.close()
-from re import findall
-file_h5_1n = open('x', 'r')
-digits2500list = file_h5_1n.read()
+    print(i, end='', file=f5)
+print(file=f5)
+
+f5.close()
+
+f5 = open(x, 'r')
+digits2500list = f5.read()
+print('Проверяем созданный файл! В Терминале информация дублируется для лишь удобства (противоречит услвию)!')
+print('Сгенерированное 2500-значное произвольное число:')
 print(digits2500list)
-def long_combo(x,y):
+f5.close()
+
+
+def long_combo(x, y):
     from re import findall as poisk
     z = poisk(x, y)
     return z
-pattern_1 = ('([0]{3,9}|[1]{3,9}|[2]{3,9}|[3]{3,9}|[4]{3,9}|[5]{3,9}|[6]{3,9}|[7]{3,9}|[8]{3,9}|[9]{3,9})')
+
+
+pattern_1 = '([0]{3,9}|[1]{3,9}|[2]{3,9}|[3]{3,9}|[4]{3,9}|[5]{3,9}|[6]{3,9}|[7]{3,9}|[8]{3,9}|[9]{3,9})'
 res_1 = long_combo(pattern_1, digits2500list)
-print(res_1)
-file_h5_1n.close()
 
-
-import re
-
-def longestSubstring(digits2500list):
-
-    digit = max(re.findall('([0]{3,9}|[1]{3,9}|[2]{3,9}|[3]{3,9}|[4]{3,9}|[5]{3,9}|[6]{3,9}|[7]{3,9}|[8]{3,9}|[9]{3,9})', digits2500list), key=len)
-
-    return print(digit)
-
-# with open(path, 'r', encoding='UTF-8') as file:
-#     stroka_1 = list(file.read())
-# print(stroka_1)
-
-# print(digits)
-# print(*digits, end = '', file = file_h5_1n)
-# file_h5_1n.close()
-
-# spisok = ''.join(list(map(lambda x: str(x), digits)))
-# print(spisok)
+m = max(map(len, res_1))
+print('Максимальная последовательность одинаковых рядомстоящих цифр равна m =', m)
+print(f'Вывод последовательности(ей) размерностью {m}:')
+f5 = open(x, 'a+')
+for i in res_1:
+    if len(i) == m:
+        print(i, end=' ', file=f5)
+f5.close()

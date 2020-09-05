@@ -54,7 +54,9 @@ line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO' \
 # mod_list = modify(my_list)
 # print(my_list)
 # print(mod_list)
-line = "'111', '666', '111', '333', '444', '222', '333', '000', '888', '9999', '333', '333', '999', '000', '777', '2222', '111', '222', '111', '4444', '777', '333'"
-
-
-print(type(line))
+line = ['444', '555', '000', '999', '000', '666', '555', '888', '111', '444', '555', '666', '999', '444', '777', '333', '444', '888', '333', '222', '888', '000', '888', '111', '777']
+m=max(map(len,line))
+print(m)
+for i in line:
+       if len(i) == m:
+              print(i, end=' ')
