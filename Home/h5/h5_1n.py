@@ -57,7 +57,7 @@ str_line_nore = ''.join(line).split(' ')  # Метод split('separator') раз
                                           # является метод списков .join(), который собирает строку из элементов списка.
                                           # Метод separator.join(list) - cобирает из списка list строку с разделителем элементов separator
 
-str_line_nore = [i for i in str_line_nore if i != '']
+str_line_nore = [i for i in str_line_nore if i != ''] #удаление всех пустых строковых значений скиска
 print('Символы нижнего регистра без модуля (re):\n', str_line_nore)
 print('------------------------------------------------------')
 '''
@@ -70,7 +70,7 @@ print('------------------------------------------------------')
 # "GAMkgAYEOmHBSQsSUHKvSfbmxULaysmNOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLec"
 # нужно получить список строк: ['AY', 'NOGI', 'P']
 # Решить задачу двумя способами: с помощью re и без.
-
+'''
 line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm' \
          'NOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewV' \
          'fzKTUfSYtBydXaVIpxWjNKgXANvIoumesCSSvjEGRJosUfuhRRDUuTQwLlJJJDdkVjfSA' \
@@ -86,6 +86,46 @@ line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm' \
          'uXBqHFjvihuNGEEFsfnMXTfptvIOlhKhyYwxLnqOsBdGvnuyEZIheApQGOXWeXoLWiDQN' \
          'JFaXiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQ' \
          'oiQzTYwZAiRwycdlHfyHNGmkNqSwXUrxGC'
+import re
+pattern = '[a-z]{2}([A-Z]*)[A-Z]{2}' # условие регулярного выражения
+list_line_task_2 = re.findall(pattern, line_2)
+list_line_task_2 = [i for i in list_line_task_2 if i != ''] # удаление всех пустых строковых значений скиска
+print('Список c использованием модуля re: \n',list_line_task_2)
+
+
+A_Z = list(map(lambda x: chr(x), list(range(65, 91))))  # генерируем алфавит ABC верхнего регистра
+a_z = list(map(lambda x: chr(x), list(range(97, 123)))) # генерируем алфавит abc
+line_2 = list(line_2)
+print((len(line_2)))
+lst = []
+i = len(line_2) - 1 # задаем i - счетчик цикла длиною на 1 эл. < списка условия задачи
+# Находим  символ в верхнем регистре после которого стоят еще два символа в верхнем регистре
+while i >= 0:
+       if line_2[i] in a_z:
+              lst.append(line_2[i])
+       elif line_2[i] in A_Z and i <= len(line_2) - 3 and line_2[i + 1] in A_Z and line_2[i + 2] in A_Z:
+              lst.append(line_2[i])
+       else:
+              lst.append(' ')
+       i -= 1
+# результат действий цикла с использованием метода .append() реверсировал выборку относительно исходного списка
+lst.reverse()  # Переворачиваем список
+
+i = 0
+lst2 = []
+# Фильтрация списка.
+while i <= len(lst) - 1:
+       if lst[i] in A_Z and lst[i - 1] in a_z and lst[i - 2] in a_z:
+              lst2.append(lst[i])
+       elif lst[i] in A_Z:
+              lst2.append(lst[i])
+       else:
+              lst2.append(' ')
+       i += 1
+list_line_task_2_nore = ''.join(lst2).split(' ')  # Преобразование в строку и разбиение по пробелам
+list_line_task_2_nore = [i for i in list_line_task_2_nore if i != '']  # Формирование выходного списка из строки
+print('Список без использованием модуля re: \n', list_line_task_2_nore)
+print('------------------------------------------------------') '''
 
 # Задание-3:
 # Напишите скрипт, заполняющий указанный файл (самостоятельно задайте имя файла)
