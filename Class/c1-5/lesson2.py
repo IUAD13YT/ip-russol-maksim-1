@@ -80,7 +80,7 @@ print(x)'''
 
 # !!!Знакомство с циклами!!!'''
 # print('Can't do this)
-'''  File "/home/dl-academy/Документы/work/ip-russol-maksim-1/Lesson2.py", line 80
+'''  File "/home/dl-academy/Документы/work/ip-russol-maksim-1/lesson2.py", line 80
 
 IndentationError: unexpected indent'''
 # print('Can\'t do this')

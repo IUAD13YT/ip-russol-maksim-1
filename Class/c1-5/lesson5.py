@@ -31,15 +31,15 @@
 # Если нужно сделать полную копию со всеми вложенными изменяемыми объектами,
 # используем copy
 import copy
-# sp = [[2,3], [4,6,[7,8]]]
-# # sp_copy = copy.deepcopy(sp)
-# sp_copy = sp[:] #list(sp)
-# print('sp',sp)
-# print('sp_copy',sp_copy)
-# sp[0].append(10)
-# sp_copy[1].append(20)
-# print('sp_copy =', sp_copy)
-# print('sp =', sp)
+sp = [[2,3], [4,6,[7,8]]]
+sp_copy = copy.deepcopy(sp)
+sp_copy = sp[:] #list(sp)
+print('sp',sp)
+print('sp_copy',sp_copy)
+sp[0].append(10)
+sp_copy[1].append(20)
+print('sp_copy =', sp_copy)
+print('sp =', sp)
 
 # matrix = [[1,2,3],
 #           [4,5,6],
