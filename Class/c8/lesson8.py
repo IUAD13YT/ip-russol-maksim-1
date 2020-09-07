@@ -150,7 +150,6 @@ print('Еще раз ...')
 for el in obj:
     print(el) ---> END'''
 
-
 # "@property - позволяет обращаться к методу как к атрибуту
 
 # class Student(Person):
@@ -192,18 +191,22 @@ class my_dict(dict):
 print(my_dict.test_method())
 ---> END'''
 
+
 class MyList(list):
     """
     Список - индексы которого начинаются с 1, а не с 0
     """
+
     def __getitem__(self, offset):
-        print('(Indexing % s at % s)' % (self,offset))
-        return list.__getitem__(self,offset - 1)
-x = MyList('abc') # __init__ наследуется из списка
-print(x)   #__repr__ наследуется из списка
-print(x[1])    #My.List__getitem__
-print(x[3])    #Изменяет поведение метода суперкласса
+        print('(Indexing % s at % s)' % (self, offset))
+        return list.__getitem__(self, offset - 1)
+
+
+x = MyList('abc')  # __init__ наследуется из списка
+print(x)  # __repr__ наследуется из списка
+print(x[1])  # My.List__getitem__
+print(x[3])  # Изменяет поведение метода суперкласса
 x.append('spam')
-print(x)      # Атрибуты, унаследованные от суперкласса лисьт
+print(x)  # Атрибуты, унаследованные от суперкласса лисьт
 x.reverse()
 print(x)
