@@ -62,17 +62,17 @@
 # import lesson5 as my_lib
 # print(my_lib.more_then_one(2))
 
-# import os
-# print('os.name = ', os.name)
-# print('os.getcwd() = ', os.getcwd())
-#
-# dir_path = os.path.join(os.getcwd(), 'NewDir')
-# try:
-#     os.mkdir(dir_path)
-# except FileExistsError:
-#     print('Такая директория уже существует')
-#     os.rmdir(dir_path)
-#     print('Директория удалена')
+import os
+print('os.name = ', os.name)
+print('os.getcwd() = ', os.getcwd())
+
+dir_path = os.path.join(os.getcwd(), 'NewDir')
+try:
+    os.mkdir(dir_path)
+except FileExistsError:
+    print('Такая директория уже существует')
+    os.rmdir(dir_path)
+    print('Директория удалена')
 # Модуль SYS
 
 '''import sys
