@@ -3,8 +3,7 @@
 # используя конструкцию try добавьте в код обработку соответствующих исключений.
 # Пример.
 # Исходная программа:
-from os import listdir
-
+import os
 
 def avg(a, b):
     """Вернуть среднее геометрическое чисел 'a' и 'b'.
@@ -36,60 +35,93 @@ while True:
     else:
         break
 
+
 # Задача-2:
 # Напишите скрипт, создающий директории dir_1 - dir_9 в папке,
 # из которой запущен данный скрипт.
 # И второй скрипт, удаляющий эти папки.
 
-import os
+
+def creating_dirs(dir_name):
+    """
+    создание папки в текущей директории
+    :param dir_name: название папки
+    :return:
+    """
+    import os
+    dir_path = os.path.join(os.getcwd(), dir_name)
+    os.mkdir(dir_path)
+
+
+def deleting_dirs(dir_name):
+    """
+    удаление папки из текущей директории
+    :param dir_name: название папки
+    :return:
+    """
+    import os
+    dir_path = os.path.join(os.getcwd(), dir_name)
+    os.rmdir(dir_path)
+
 
 try:
     for i in range(9):
-        dir_path = os.path.join(os.getcwd(), 'dir_' + str(i + 1))
-        os.mkdir(dir_path)
+        name = 'dir_' + str(i + 1)
+        creating_dirs(name)
         i += 1
 except FileExistsError:
     print('Папки уже созданы')
 
-
-    def delete_dirs(the_path):
-        for i in range(9):
-            our_path = os.path.join(the_path, 'dir_' + str(i + 1))
-            os.rmdir(our_path)
-
-        return i
-
-
     question = input('Хотите удалить папки (Да или Нет)?:')
     if question == 'Да':
-        delete_dirs(os.getcwd())
+        for i in range(9):
+            deleting_dirs(name)
+
 
 # Задача-3:
 # Напишите скрипт, отображающий папки текущей директории.
 
 
-import os
-
-
-def folders_in_directory(the_path):
-    for cases in os.listdir(the_path):
+def folder_contents(specified_path):
+    """
+    выводит содержание папки по заданному пути
+    :param specified_path: заданный путь
+    :return:
+    """
+    import os
+    for cases in os.listdir(specified_path):
         print(cases)
-    return cases
 
 
-print(f'Содержимое кончной папки пути \n{os.getcwd()}')
-folders_in_directory(os.getcwd())
+print(f'Содержимое конечной папки пути \n{os.getcwd()}')
+folder_contents(os.getcwd())
+
 
 # Задача-4:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
-import os
-import shutil
-import sys
-def copy_file(first_file, backup_file):
-    shutil.copy(first_file, backup_file)
-    return shutil.copy
 
-first_file = sys.argv[0]
+def copying_file(file, copy_name):
+    """
+    копирует содержимое файла file в файл или copy_name
+    :param file: исходный файл
+    :param copy_name: копия исходника
+    :return:
+    """
+    import shutil
+    shutil.copy(file, copy_name)
+
+
+# shutil.copy(src, dst, follow_symlinks=True) - копирует содержимое файла src в файл или папку dst.
+import sys
+first_file = sys.argv[0]  # h6_0e.py
+# а) вызов первого аргумента, argv[0], исполльзует аналогичное скрипту Python наименование.
+# б) указываем непосредственное имя файла в текущей директории 'h6_0e.py' или 'test.py'.
 backup_file = first_file + '.copy'
-copy_file(first_file,backup_file)
+copying_file(first_file, backup_file)
+print('Файл, содержащий скрипт скопирован')
+question = input('Хотите удалить файл (Да или Нет)?: ')
+if question == 'Да':
+    path = os.path.join(os.getcwd(), sys.argv[0] + '.copy')
+    os.remove(path)
+    print('Файл удалён')
