@@ -91,6 +91,7 @@ def folder_contents(specified_path):
     import os
     for cases in os.listdir(specified_path):
         print(cases)
+    return
 
 
 print(f'Содержимое конечной папки пути \n{os.getcwd()}')
@@ -101,7 +102,7 @@ folder_contents(os.getcwd())
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
 
-def copying_file(file, copy_name):
+def copying_file(file):
     """
     копирует содержимое файла file в файл или copy_name
     :param file: исходный файл
@@ -109,16 +110,16 @@ def copying_file(file, copy_name):
     :return:
     """
     import shutil
+    copy_name = file + '.copy'
     shutil.copy(file, copy_name)
-
+    return
 
 # shutil.copy(src, dst, follow_symlinks=True) - копирует содержимое файла src в файл или папку dst.
 import sys
 first_file = sys.argv[0]  # h6_0e.py
 # а) вызов первого аргумента, argv[0], исполльзует аналогичное скрипту Python наименование.
 # б) указываем непосредственное имя файла в текущей директории 'h6_0e.py' или 'test.py'.
-backup_file = first_file + '.copy'
-copying_file(first_file, backup_file)
+copying_file(first_file)
 print('Файл, содержащий скрипт скопирован')
 question = input('Хотите удалить файл (Да или Нет)?: ')
 if question == 'Да':

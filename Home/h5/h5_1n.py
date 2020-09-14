@@ -3,7 +3,7 @@
 # 1 или более символов в верхнем регистре.
 # Т.е. из строки "mtMmEZUOmcq" нужно получить ['mt', 'm', 'mcq']
 # Решить задачу двумя способами: с помощью re и без.
-'''
+
 line = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysmNO' \
        'GIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewVzK' \
        'TUfSYtBydXaVIpxWjNKgXANvIoumesCSSvjEGRJosUfuhRRDUuTQwLlJJJDdkVjfSAHqn' \
@@ -60,7 +60,7 @@ str_line_nore = ''.join(line).split(' ')  # Метод split('separator') раз
 str_line_nore = [i for i in str_line_nore if i != ''] #удаление всех пустых строковых значений скиска
 print('Символы нижнего регистра без модуля (re):\n', str_line_nore)
 print('------------------------------------------------------')
-'''
+
 
 # Задание-2:
 # Вывести символы в верхнем регистре, слева от которых находятся
@@ -69,7 +69,7 @@ print('------------------------------------------------------')
 # "GAMkgAYEOmHBSQsSUHKvSfbmxULaysmNOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLec"
 # нужно получить список строк: ['AY', 'NOGI', 'P']
 # Решить задачу двумя способами: с помощью re и без.
-'''
+
 line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm' \
          'NOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewV' \
          'fzKTUfSYtBydXaVIpxWjNKgXANvIoumesCSSvjEGRJosUfuhRRDUuTQwLlJJJDdkVjfSA' \
@@ -124,7 +124,7 @@ while i <= len(lst) - 1:
 list_line_task_2_nore = ''.join(lst2).split(' ')  # Преобразование в строку и разбиение по пробелам
 list_line_task_2_nore = [i for i in list_line_task_2_nore if i != '']  # Формирование выходного списка из строки
 print('Список без использованием модуля re: \n', list_line_task_2_nore)
-print('------------------------------------------------------') '''
+print('------------------------------------------------------')
 
 # Задание-3:
 # Напишите скрипт, заполняющий указанный файл (самостоятельно задайте имя файла)
