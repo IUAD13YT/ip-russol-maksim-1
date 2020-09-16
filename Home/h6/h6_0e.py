@@ -64,6 +64,17 @@ def deleting_dirs(dir_name):
     os.rmdir(dir_path)
 
 
+for i in range(9):
+    try:
+        dir_name = 'dir_' + str(i + 1)
+        dir_path = os.path.join(os.getcwd(), dir_name)
+        os.rmdir(dir_path)
+        i += 1
+    except FileNotFoundError:
+        print('Невозможно удалить несуществующие папки')
+        question = input('Хотите создать папки (Да или Нет)?:')
+        if question == 'Да':
+
 try:
     for i in range(9):
         name = 'dir_' + str(i + 1)
@@ -76,6 +87,14 @@ except FileExistsError:
     if question == 'Да':
         for i in range(9):
             deleting_dirs(name)
+
+ try:
+        dir_name = 'dir_' + str(i + 1)
+        dir_path = os.path.join(os.getcwd(), dir_name)
+        os.rmdir(dir_path)
+        i += 1
+    except FileNotFoundError:
+        print('Невозможно удалить несуществующие папки')
 
 
 # Задача-3:
@@ -101,7 +120,7 @@ folder_contents(os.getcwd())
 # Задача-4:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
-
+filter()
 def copying_file(file):
     """
     копирует содержимое файла file в файл или copy_name
