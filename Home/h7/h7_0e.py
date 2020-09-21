@@ -69,18 +69,18 @@ print_three(prim_three)
 # вычисления: длины сторон, периметр, площадь.
 
 
-def print_trap(Trap):
-    print(Trap.trap_checking())
-    print('Cтороны трапеции', Trap.sides())
-    print('Периметр трапеции', Trap.perimeter_of_trap())
-    print('Высота трапеции', Trap.height_of_trap())
-    print('Площадь трапеции', Trap.square_of_trap())
+def print_trap(trap):
+    print(trap.trap_checking())
+    print('Cтороны трапеции', trap.sides())
+    print('Периметр трапеции', trap.perimeter_of_trap())
+    print('Высота трапеции', trap.height_of_trap())
+    print('Площадь трапеции', trap.square_of_trap())
     return ()
 
 
 try:
 
-    class Trapeze:
+    class trapeze:
         def __init__(self, q, w, e, r):
             def sides_and_diagonals_of_trap(t1, t2):
                 return ((t2[0] - t1[0]) ** 2 +
@@ -162,7 +162,7 @@ try:
 
 
     td = input_dots(4)
-    prim_trap = Trapeze(td[0], td[1], td[2], td[3])
+    prim_trap = trapeze(td[0], td[1], td[2], td[3])
     print_trap(prim_trap)
 
 except ZeroDivisionError:
