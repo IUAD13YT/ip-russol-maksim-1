@@ -144,4 +144,3 @@ for _ in classes:
     print('УЧЕНИИКИ {} КЛАССА'.format(_.classes))
     for st in students:
         print(st.full_name_format())
-c.class_group: c for c in classes
