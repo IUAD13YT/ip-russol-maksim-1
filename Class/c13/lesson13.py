@@ -291,3 +291,6 @@ parms = { 'host' : 'www.python.org',
 'port' : 80
 }
 log.critical("Can't connect to %(host)s at port %(port)d", parms)
+log.warning("Can't connect to %(host)s at port %(port)d", parms)
+log.error("Can't connect to %(host)s at port %(port)d", parms)
+log.info("Can't connect to %(host)s at port %(port)d", parms)
