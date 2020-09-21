@@ -34,8 +34,8 @@ def folder_contents():
     :return:
     """
     from os import listdir, getcwd
-    # for cases in listdir(getcwd()):
-    #     print(cases)
+    for cases in listdir(getcwd()):
+        print(cases)
     return listdir(getcwd())
 
 
