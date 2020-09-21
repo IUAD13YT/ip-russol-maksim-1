@@ -61,19 +61,7 @@ def deleting_dirs(dir_name):
     """
     import os
     dir_path = os.path.join(os.getcwd(), dir_name)
-    os.rmdir(dir_path)
-
-
-for i in range(9):
-    try:
-        dir_name = 'dir_' + str(i + 1)
-        dir_path = os.path.join(os.getcwd(), dir_name)
-        os.rmdir(dir_path)
-        i += 1
-    except FileNotFoundError:
-        print('Невозможно удалить несуществующие папки')
-        question = input('Хотите создать папки (Да или Нет)?:')
-        if question == 'Да':
+    return os.rmdir(dir_path)
 
 try:
     for i in range(9):
@@ -82,11 +70,12 @@ try:
         i += 1
 except FileExistsError:
     print('Папки уже созданы')
-
     question = input('Хотите удалить папки (Да или Нет)?:')
     if question == 'Да':
         for i in range(9):
+            name = 'dir_' + str(i + 1)
             deleting_dirs(name)
+            i += 1
 
  try:
         dir_name = 'dir_' + str(i + 1)

@@ -42,8 +42,26 @@ class Teacher(Person):
         self.subjects = subjects
 
 
+class Class:
+    def __init__(self, num, letter, students, teacher):
+        assert all((isinstance(_, Student) for _ in students)), 'что-то не так в базе учеников'
+        self.students = classes
+        self.letter = letter
+        self.num = num
+
+    @ property
+    def class_name(self):
+        return f'{self.num} {self.letter}'
+
+
+class Subject:
+    def __init__(self, name, student_classes, teacher):
+        assert isinstance(teacher, Teacher), 'С учителем что-то не так'
+        assert all(isinstance(_, Class) for _ in students)
+
+
 class School:
-    def __init__(self, classes, teachers):
+    def __init__(self, name, classes):
         self.classes = classes
         self.teacher_dirs = {t.subjects: t for t in teachers}
 
@@ -141,6 +159,6 @@ students = [Student('Голубова', 'Дина', 'Геннадиевна', cl
 #     print(_.classes)
 # 2. Получить список всех учеников в указанном классе
 for _ in classes:
-    print('УЧЕНИИКИ {} КЛАССА'.format(_.classes))
+    print('УЧЕНИКИ {} КЛАССА'.format(_.classes))
     for st in students:
-        print(st.full_name_format())
+        print(st.full_name_format())for
