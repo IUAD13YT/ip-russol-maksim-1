@@ -5,7 +5,7 @@
 import math
 
 
-def InputDots(dot):
+def input_dots(dot):
     """
     Функция задает вводимые пользователем координаты точек
     :param dot: количество точек с парой координай (x, y)
@@ -22,17 +22,17 @@ def InputDots(dot):
     return s
 
 
-def print_three(Three):
-    print('Периметр треугольника: ', Three.PerimeterOfTriangle())
-    print('Площадь треугольника: ', Three.SquareOfTriangle())
-    print('Высота треугольника: ', Three.HeightOfTriangle())
+def print_three(three):
+    print('Периметр треугольника: ', three.perimeter_of_triangle())
+    print('Площадь треугольника: ', three.square_of_triangle())
+    print('Высота треугольника: ', three.height_of_triangle())
     print()
     return ()
 
 
 class Triangle:
     def __init__(self, A, B, C):
-        def SideOfTriangle(t1, t2):
+        def side_of_triangle(t1, t2):
             return math.sqrt(((t2[0] - t1[0]) ** 2) +
                              ((t2[1] - t1[1]) ** 2))
 
@@ -40,25 +40,25 @@ class Triangle:
         self.B = B
         self.C = C
 
-        self.a = SideOfTriangle(self.A, self.B)
-        self.b = SideOfTriangle(self.B, self.C)
-        self.c = SideOfTriangle(self.A, self.C)
+        self.a = side_of_triangle(self.A, self.B)
+        self.b = side_of_triangle(self.B, self.C)
+        self.c = side_of_triangle(self.A, self.C)
 
-    def PerimeterOfTriangle(self):
+    def perimeter_of_triangle(self):
         return round((self.a + self.b + self.c), 2)
 
-    def SquareOfTriangle(self):
-        half_perimeter = self.PerimeterOfTriangle() / 2
+    def square_of_triangle(self):
+        half_perimeter = self.perimeter_of_triangle() / 2
         return round((math.sqrt(half_perimeter *
                                 (half_perimeter - self.a) *
                                 (half_perimeter - self.b) *
                                 (half_perimeter - self.c))), 2)
 
-    def HeightOfTriangle(self):
-        return round((self.SquareOfTriangle() / (self.a / 2)), 2)
+    def height_of_triangle(self):
+        return round((self.square_of_triangle() / (self.a / 2)), 2)
 
 
-dots_1 = InputDots(3)
+dots_1 = input_dots(3)
 prim_three = Triangle(dots_1[0], dots_1[1], dots_1[2])
 print_three(prim_three)
 
@@ -161,7 +161,7 @@ try:
                 return round((((self.sideAB + self.sideCD) * self.HeightOfTrap()) / 2), 2)
 
 
-    td = InputDots(4)
+    td = input_dots(4)
     prim_trap = Trapeze(td[0], td[1], td[2], td[3])
     print_trap(prim_trap)
 
