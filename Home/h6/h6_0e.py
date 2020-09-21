@@ -41,49 +41,49 @@ while True:
 # из которой запущен данный скрипт.
 # И второй скрипт, удаляющий эти папки.
 
-
-def creating_dirs(dir_name):
-    """
-    создание папки в текущей директории
-    :param dir_name: название папки
-    :return:
-    """
-    import os
-    dir_path = os.path.join(os.getcwd(), dir_name)
-    os.mkdir(dir_path)
-
-
-def deleting_dirs(dir_name):
-    """
-    удаление папки из текущей директории
-    :param dir_name: название папки
-    :return:
-    """
-    import os
-    dir_path = os.path.join(os.getcwd(), dir_name)
-    return os.rmdir(dir_path)
-
-try:
-    for i in range(9):
-        name = 'dir_' + str(i + 1)
-        creating_dirs(name)
-        i += 1
-except FileExistsError:
-    print('Папки уже созданы')
-    question = input('Хотите удалить папки (Да или Нет)?:')
-    if question == 'Да':
-        for i in range(9):
-            name = 'dir_' + str(i + 1)
-            deleting_dirs(name)
-            i += 1
-
- try:
-        dir_name = 'dir_' + str(i + 1)
-        dir_path = os.path.join(os.getcwd(), dir_name)
-        os.rmdir(dir_path)
-        i += 1
-    except FileNotFoundError:
-        print('Невозможно удалить несуществующие папки')
+#
+# def creating_dirs(dir_name):
+#     """
+#     создание папки в текущей директории
+#     :param dir_name: название папки
+#     :return:
+#     """
+#     import os
+#     dir_path = os.path.join(os.getcwd(), dir_name)
+#     os.mkdir(dir_path)
+#
+#
+# def deleting_dirs(dir_name):
+#     """
+#     удаление папки из текущей директории
+#     :param dir_name: название папки
+#     :return:
+#     """
+#     import os
+#     dir_path = os.path.join(os.getcwd(), dir_name)
+#     return os.rmdir(dir_path)
+#
+# try:
+#     for i in range(9):
+#         name = 'dir_' + str(i + 1)
+#         creating_dirs(name)
+#         i += 1
+# except FileExistsError:
+#     print('Папки уже созданы')
+#     question = input('Хотите удалить папки (Да или Нет)?:')
+#     if question == 'Да':
+#         for i in range(9):
+#             name = 'dir_' + str(i + 1)
+#             deleting_dirs(name)
+#             i += 1
+#
+#  try:
+#         dir_name = 'dir_' + str(i + 1)
+#         dir_path = os.path.join(os.getcwd(), dir_name)
+#         os.rmdir(dir_path)
+#         i += 1
+#     except FileNotFoundError:
+#         print('Невозможно удалить несуществующие папки')
 
 
 # Задача-3:

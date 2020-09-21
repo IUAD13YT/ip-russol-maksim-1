@@ -158,7 +158,7 @@ students = [Student('Голубова', 'Дина', 'Геннадиевна', cl
 # for _ in classes:
 #     print(_.classes)
 # 2. Получить список всех учеников в указанном классе
-for _ in classes:
-    print('УЧЕНИКИ {} КЛАССА'.format(_.classes))
-    for st in students:
-        print(st.full_name_format())for
+# for _ in classes:
+#     print('УЧЕНИКИ {} КЛАССА'.format(_.classes))
+#     for st in students:
+#         # print(st.full_name_format())for
