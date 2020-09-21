@@ -5,6 +5,7 @@
 # Исходная программа:
 import os
 
+
 def avg(a, b):
     """Вернуть среднее геометрическое чисел 'a' и 'b'.
     Параметры:
@@ -67,34 +68,15 @@ def deleting_dirs(dir_name):
 for i in range(9):
     try:
         dir_name = 'dir_' + str(i + 1)
-        dir_path = os.path.join(os.getcwd(), dir_name)
-        os.rmdir(dir_path)
+        creating_dirs(dir_name)
         i += 1
-    except FileNotFoundError:
-        print('Невозможно удалить несуществующие папки')
-        question = input('Хотите создать папки (Да или Нет)?:')
-        if question == 'Да':
-
-try:
-    for i in range(9):
-        name = 'dir_' + str(i + 1)
-        creating_dirs(name)
-        i += 1
-except FileExistsError:
-    print('Папки уже созданы')
-
-    question = input('Хотите удалить папки (Да или Нет)?:')
-    if question == 'Да':
-        for i in range(9):
-            deleting_dirs(name)
-
- try:
-        dir_name = 'dir_' + str(i + 1)
-        dir_path = os.path.join(os.getcwd(), dir_name)
-        os.rmdir(dir_path)
-        i += 1
-    except FileNotFoundError:
-        print('Невозможно удалить несуществующие папки')
+    except FileExistsError:
+        answer = input('Хотите удалить?')
+        if answer == 'Да':
+            for j in range(9):
+                name_dir = 'dir_' + str(j + 1)
+                deleting_dirs(name_dir)
+                i += 1
 
 
 # Задача-3:
@@ -116,11 +98,10 @@ def folder_contents(specified_path):
 print(f'Содержимое конечной папки пути \n{os.getcwd()}')
 folder_contents(os.getcwd())
 
-
 # Задача-4:
 # Напишите скрипт, создающий копию файла, из которого запущен данный скрипт.
 
-filter()
+
 def copying_file(file):
     """
     копирует содержимое файла file в файл или copy_name
@@ -133,8 +114,10 @@ def copying_file(file):
     shutil.copy(file, copy_name)
     return
 
+
 # shutil.copy(src, dst, follow_symlinks=True) - копирует содержимое файла src в файл или папку dst.
 import sys
+
 first_file = sys.argv[0]  # h6_0e.py
 # а) вызов первого аргумента, argv[0], исполльзует аналогичное скрипту Python наименование.
 # б) указываем непосредственное имя файла в текущей директории 'h6_0e.py' или 'test.py'.
@@ -145,3 +128,38 @@ if question == 'Да':
     path = os.path.join(os.getcwd(), sys.argv[0] + '.copy')
     os.remove(path)
     print('Файл удалён')
+
+#
+#
+#
+# for i in range(9):
+#     try:
+#         dir_name = 'dir_' + str(i + 1)
+#         dir_path = os.path.join(os.getcwd(), dir_name)
+#         os.rmdir(dir_path)
+#         i += 1
+#     except FileNotFoundError:
+#         print('Невозможно удалить несуществующие папки')
+#         question = input('Хотите создать папки (Да или Нет)?:')
+#         if question == 'Да':
+#
+# try:
+#     for i in range(9):
+#         name = 'dir_' + str(i + 1)
+#         creating_dirs(name)
+#         i += 1
+# except FileExistsError:
+#     print('Папки уже созданы')
+#
+#     question = input('Хотите удалить папки (Да или Нет)?:')
+#     if question == 'Да':
+#         for i in range(9):
+#             deleting_dirs(name)
+#
+#  try:
+#         dir_name = 'dir_' + str(i + 1)
+#         dir_path = os.path.join(os.getcwd(), dir_name)
+#         os.rmdir(dir_path)
+#         i += 1
+#     except FileNotFoundError:
+#         print('Невозможно удалить несуществующие папки')
