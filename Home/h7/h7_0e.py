@@ -5,7 +5,7 @@
 import math
 
 
-def InputDots(dot):
+def input_dots(dot):
     """
     Функция задает вводимые пользователем координаты точек
     :param dot: количество точек с парой координай (x, y)
@@ -22,43 +22,43 @@ def InputDots(dot):
     return s
 
 
-def print_three(Three):
-    print('Периметр треугольника: ', Three.PerimeterOfTriangle())
-    print('Площадь треугольника: ', Three.SquareOfTriangle())
-    print('Высота треугольника: ', Three.HeightOfTriangle())
+def print_three(three):
+    print('Периметр треугольника: ', three.perimeter_of_triangle())
+    print('Площадь треугольника: ', three.square_of_triangle())
+    print('Высота треугольника: ', three.height_of_triangle())
     print()
     return ()
 
 
 class Triangle:
-    def __init__(self, A, B, C):
-        def SideOfTriangle(t1, t2):
+    def __init__(self, q, w, e):
+        def side_of_triangle(t1, t2):
             return math.sqrt(((t2[0] - t1[0]) ** 2) +
                              ((t2[1] - t1[1]) ** 2))
 
-        self.A = A
-        self.B = B
-        self.C = C
+        self.A = q
+        self.B = w
+        self.C = e
 
-        self.a = SideOfTriangle(self.A, self.B)
-        self.b = SideOfTriangle(self.B, self.C)
-        self.c = SideOfTriangle(self.A, self.C)
+        self.a = side_of_triangle(self.A, self.B)
+        self.b = side_of_triangle(self.B, self.C)
+        self.c = side_of_triangle(self.A, self.C)
 
-    def PerimeterOfTriangle(self):
+    def perimeter_of_triangle(self):
         return round((self.a + self.b + self.c), 2)
 
-    def SquareOfTriangle(self):
-        half_perimeter = self.PerimeterOfTriangle() / 2
+    def square_of_triangle(self):
+        half_perimeter = self.perimeter_of_triangle() / 2
         return round((math.sqrt(half_perimeter *
                                 (half_perimeter - self.a) *
                                 (half_perimeter - self.b) *
                                 (half_perimeter - self.c))), 2)
 
-    def HeightOfTriangle(self):
-        return round((self.SquareOfTriangle() / (self.a / 2)), 2)
+    def height_of_triangle(self):
+        return round((self.square_of_triangle() / (self.a / 2)), 2)
 
 
-dots_1 = InputDots(3)
+dots_1 = input_dots(3)
 prim_three = Triangle(dots_1[0], dots_1[1], dots_1[2])
 print_three(prim_three)
 
@@ -69,24 +69,24 @@ print_three(prim_three)
 # вычисления: длины сторон, периметр, площадь.
 
 
-def print_trap(Trap):
-    print(Trap.TrapChecking())
-    print('Cтороны трапеции', Trap.Sides())
-    print('Периметр трапеции', Trap.PerimeterOfTrap())
-    print('Высота трапеции', Trap.HeightOfTrap())
-    print('Площадь трапеции', Trap.SquareOfTrap())
+def print_trap(trap):
+    print(trap.trap_checking())
+    print('Cтороны трапеции', trap.sides())
+    print('Периметр трапеции', trap.perimeter_of_trap())
+    print('Высота трапеции', trap.height_of_trap())
+    print('Площадь трапеции', trap.square_of_trap())
     return ()
 
 
 try:
 
-    class Trapeze:
-        def __init__(self, A, B, C, D):
-            def SidesAndDiagonalsOfTrap(t1, t2):
+    class trapeze:
+        def __init__(self, q, w, e, r):
+            def sides_and_diagonals_of_trap(t1, t2):
                 return ((t2[0] - t1[0]) ** 2 +
                         (t2[1] - t1[1]) ** 2)
 
-            def Parallels(a, b, c, d):
+            def parallels(a, b, c, d):
                 ad = [j - k for j, k in zip(d, a)]
                 nad = math.sqrt(sum([i ** 2 for i in ad]))
                 adn = [i / nad for i in ad]
@@ -108,61 +108,61 @@ try:
                 else:
                     return 3
 
-            self.A = A
-            self.B = B
-            self.C = C
-            self.D = D
+            self.A = q
+            self.B = w
+            self.C = e
+            self.D = r
 
-            self.sideAB = round((SidesAndDiagonalsOfTrap(self.A, self.B)), 2)
-            self.sideBC = round((SidesAndDiagonalsOfTrap(self.B, self.C)), 2)
-            self.sideCD = round((SidesAndDiagonalsOfTrap(self.C, self.D)), 2)
-            self.sideAD = round((SidesAndDiagonalsOfTrap(self.A, self.D)), 2)
-            self.dig_1 = round((SidesAndDiagonalsOfTrap(self.A, self.C)), 2)
-            self.dig_2 = round((SidesAndDiagonalsOfTrap(self.B, self.D)), 2)
+            self.sideAB = round((sides_and_diagonals_of_trap(self.A, self.B)), 2)
+            self.sideBC = round((sides_and_diagonals_of_trap(self.B, self.C)), 2)
+            self.sideCD = round((sides_and_diagonals_of_trap(self.C, self.D)), 2)
+            self.sideAD = round((sides_and_diagonals_of_trap(self.A, self.D)), 2)
+            self.dig_1 = round((sides_and_diagonals_of_trap(self.A, self.C)), 2)
+            self.dig_2 = round((sides_and_diagonals_of_trap(self.B, self.D)), 2)
 
-            self.Parallels = Parallels(self.A, self.B, self.C, self.D)
-            self.answer = 'Фигура не определена ка трапеция по основным её свойствам'
+            self.parallels = parallels(self.A, self.B, self.C, self.D)
+            self.answer = 'Фигура не определена как трапеция по основным её свойствам'
             self.answer_AD_BC = 'успешная проверка: фигура - равнобедренная трапеция. AD и BC - паралельные основания'
             self.answer_AB_DC = 'успешная проверка: фигура - равнобедренная трапеция. AB и DC - паралельные основания'
 
-        def TrapChecking(self):
+        def trap_checking(self):
             if self.dig_1 == self.dig_2:
-                if self.Parallels == 1:
+                if self.parallels == 1:
                     return self.answer_AD_BC
                 else:
                     return self.answer_AB_DC
-            elif self.sideAB == self.sideCD and self.Parallels == 1:
+            elif self.sideAB == self.sideCD and self.parallels == 1:
                 return self.answer_AD_BC
-            elif self.sideAD == self.sideBC and self.Parallels == 2:
+            elif self.sideAD == self.sideBC and self.parallels == 2:
                 return self.answer_AB_DC
             else:
                 raise SystemExit(print(self.answer))
 
-        def Sides(self):
+        def sides(self):
             return self.sideAB, self.sideBC, self.sideAD, self.sideCD
 
-        def PerimeterOfTrap(self):
+        def perimeter_of_trap(self):
             return self.sideAB + self.sideAD + self.sideBC + self.sideCD
 
-        def HeightOfTrap(self):
-            if self.TrapChecking() == self.answer_AD_BC:
+        def height_of_trap(self):
+            if self.trap_checking() == self.answer_AD_BC:
                 return round(math.sqrt((self.sideBC ** 2) -
                                        (((self.sideAD - self.sideAB) ** 2) + (self.sideBC ** 2) - (self.sideCD ** 2)) /
                                        (self.sideAD - self.sideAB) * 2), 2)
-            elif self.TrapChecking() == self.answer_AB_DC:
+            elif self.trap_checking() == self.answer_AB_DC:
                 return round(math.sqrt((self.sideCD ** 2) -
                                        (((self.sideAB - self.sideBC) ** 2) + (self.sideCD ** 2) - (self.sideAD ** 2)) /
                                        (self.sideAB - self.sideBC) * 2), 2)
 
-        def SquareOfTrap(self):
-            if self.TrapChecking() == self.answer_AD_BC:
-                return round((((self.sideAD + self.sideBC) * self.HeightOfTrap()) / 2), 2)
-            elif self.TrapChecking() == self.answer_AB_DC:
-                return round((((self.sideAB + self.sideCD) * self.HeightOfTrap()) / 2), 2)
+        def square_of_trap(self):
+            if self.trap_checking() == self.answer_AD_BC:
+                return round((((self.sideAD + self.sideBC) * self.height_of_trap()) / 2), 2)
+            elif self.trap_checking() == self.answer_AB_DC:
+                return round((((self.sideAB + self.sideCD) * self.height_of_trap()) / 2), 2)
 
 
-    td = InputDots(4)
-    prim_trap = Trapeze(td[0], td[1], td[2], td[3])
+    td = input_dots(4)
+    prim_trap = trapeze(td[0], td[1], td[2], td[3])
     print_trap(prim_trap)
 
 except ZeroDivisionError:

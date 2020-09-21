@@ -5,7 +5,7 @@
 # вызов метода от родительского класса
 
 # Применение полиморфизма
-''' --- > НАЧАЛО
+# --- > НАЧАЛО
 class Transport:
     __type = "default"
     def __init__(self, params="default"):
@@ -33,7 +33,6 @@ class Car(Transport):
 transportDefault = Transport()
 car = Car("Tesla model X", 440)
 
-
 def polimorfism(transport):
     if hasattr (transport, 'move'): #hasattr - проверяет у объекта есть ли заданный атрибут 'move'
         transport.move()
@@ -42,7 +41,9 @@ def polimorfism(transport):
 
 
 polimorfism(transportDefault)
-polimorfism(car)  КОНЕЦ '''
+polimorfism(car)
+car.move()
+# КОНЕЦ '''
 
 # ПЕРЕГРУЗКА ОПЕРАТОРОВ
 
@@ -191,22 +192,22 @@ class my_dict(dict):
 print(my_dict.test_method())
 ---> END'''
 
-
-class MyList(list):
-    """
-    Список - индексы которого начинаются с 1, а не с 0
-    """
-
-    def __getitem__(self, offset):
-        print('(Indexing % s at % s)' % (self, offset))
-        return list.__getitem__(self, offset - 1)
-
-
-x = MyList('abc')  # __init__ наследуется из списка
-print(x)  # __repr__ наследуется из списка
-print(x[1])  # My.List__getitem__
-print(x[3])  # Изменяет поведение метода суперкласса
-x.append('spam')
-print(x)  # Атрибуты, унаследованные от суперкласса лисьт
-x.reverse()
-print(x)
+#
+# class MyList(list):
+#     """
+#     Список - индексы которого начинаются с 1, а не с 0
+#     """
+#
+#     def __getitem__(self, offset):
+#         print('(Indexing % s at % s)' % (self, offset))
+#         return list.__getitem__(self, offset - 1)
+#
+#
+# x = MyList('abc')  # __init__ наследуется из списка
+# print(x)  # __repr__ наследуется из списка
+# print(x[1])  # My.List__getitem__
+# print(x[3])  # Изменяет поведение метода суперкласса
+# x.append('spam')
+# print(x)  # Атрибуты, унаследованные от суперкласса лисьт
+# x.reverse()
+# print(x)
