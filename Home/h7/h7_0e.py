@@ -31,14 +31,14 @@ def print_three(three):
 
 
 class Triangle:
-    def __init__(self, A, B, C):
+    def __init__(self, q, w, e):
         def side_of_triangle(t1, t2):
             return math.sqrt(((t2[0] - t1[0]) ** 2) +
                              ((t2[1] - t1[1]) ** 2))
 
-        self.A = A
-        self.B = B
-        self.C = C
+        self.A = q
+        self.B = w
+        self.C = e
 
         self.a = side_of_triangle(self.A, self.B)
         self.b = side_of_triangle(self.B, self.C)
