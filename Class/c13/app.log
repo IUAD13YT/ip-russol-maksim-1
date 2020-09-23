@@ -5,3 +5,8 @@ CRITICAL   2020-09-21 21:16:53,170 Can't connect to www.python.org at port 80
 WARNING    2020-09-21 21:16:53,170 Can't connect to www.python.org at port 80
 ERROR      2020-09-21 21:16:53,170 Can't connect to www.python.org at port 80
 INFO       2020-09-21 21:16:53,170 Can't connect to www.python.org at port 80
+CRITICAL   2020-09-23 19:17:07,094 Can't connect to localhost at port 7777
+CRITICAL   2020-09-23 19:17:07,095 Can't connect to www.python.org at port 80
+WARNING    2020-09-23 19:17:07,095 Can't connect to www.python.org at port 80
+ERROR      2020-09-23 19:17:07,095 Can't connect to www.python.org at port 80
+INFO       2020-09-23 19:17:07,095 Can't connect to www.python.org at port 80
