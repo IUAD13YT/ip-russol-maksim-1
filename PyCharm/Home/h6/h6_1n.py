@@ -16,7 +16,7 @@
 import os
 from easy import creating_dirs, deleting_dirs, folder_contents, copying_file
 
-path = 'C:/Users/user/PycharmProjects/ip-russol-maksim-1/'
+path = '//'
 os.getcwd()
 print(os.getcwd())
 
